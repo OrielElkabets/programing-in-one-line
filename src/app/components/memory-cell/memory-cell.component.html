@@ -1,0 +1,5 @@
+<div class="byte">
+    <div class="bit" *ngFor="let cell of binValue()" [ngClass]="{'on': cell == '1'}">
+        {{cell}}
+    </div>
+</div>

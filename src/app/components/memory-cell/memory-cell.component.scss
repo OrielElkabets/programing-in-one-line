@@ -1,0 +1,24 @@
+.byte {
+    display: flex;
+    border: 1px solid black;
+    width: fit-content;
+    height: 100%;
+    --width: 20px;
+
+    .bit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--width);
+        padding: 5px 3px;
+        border-right: 1px solid black;
+
+        &:last-child{
+            border: none;
+        }
+
+        &.on{
+            background-color: rgb(255, 233, 153);
+        }
+    }
+}

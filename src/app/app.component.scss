@@ -1,0 +1,134 @@
+main {
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    height: 100%;
+    scroll-snap-align: start;
+
+    &.section1 {
+        display: grid;
+        align-content: start;
+        gap: 30px;
+    }
+
+    .sliderContainer {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 7px;
+        width: fit-content;
+
+        .combineView {
+            display: flex;
+            gap: 7px;
+        }
+
+        .numRepresantation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4ch;
+            height: 4ch;
+            // padding: 5px;
+            border: 1px solid black;
+        }
+
+        input[type="range"] {
+            grid-column: span 2;
+            width: 100%;
+
+            // --fillColor: #cdfaff;
+            --fillColor: rgb(255, 245, 207);
+            --hundleColor: #434343;
+
+            overflow: hidden;
+            -webkit-appearance: none;
+            background-color: #ffffff;
+            border: 1px solid black;
+
+            &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
+                height: 10px;
+                margin-top: -1px;
+                color: var(--fillColor);
+            }
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 10px;
+                height: 10px;
+                cursor: ew-resize;
+                background: var(--hundleColor);
+                box-shadow: -200px 0 0 200px var(--fillColor);
+            }
+
+            /** FF*/
+            &::-moz-range-progress {
+                background-color: var(--fillColor);
+            }
+
+            &::-moz-range-track {
+                background-color: var(--hundleColor);
+            }
+
+            /* IE*/
+            &::-ms-fill-lower {
+                background-color: var(--fillColor);
+            }
+
+            &::-ms-fill-upper {
+                background-color: var(--hundleColor);
+            }
+        }
+    }
+
+    .collorCombinator {
+        display: grid;
+        grid-template-areas:
+            "red res "
+            "green res"
+            "blue res"
+        ;
+        justify-content: start;
+        gap: 12px;
+
+        &>*:nth-child(1) {
+            grid-area: red;
+        }
+
+        &>*:nth-child(2) {
+            grid-area: green;
+
+        }
+
+        &>*:nth-child(3) {
+            grid-area: blue;
+        }
+
+        &>.resColor {
+            grid-area: res;
+            aspect-ratio: 1/1;
+            height: 100%;
+            border: 2px solid black;
+            padding: 20px;
+
+            div {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    // &:nth-child(1){
+    //     background-color: lightblue;
+    // }
+    // &:nth-child(2){
+    //     background-color: lightcoral;
+    // }
+    // &:nth-child(3){
+    //     background-color: lightgreen;
+    // }
+}
