@@ -1,0 +1,59 @@
+.sliderContainer {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 7px;
+    width: fit-content;
+
+    .combineViews {
+        display: flex;
+        gap: 7px;
+    }
+
+    input[type="range"] {
+        grid-column: span 2;
+        width: 100%;
+
+        // --fillColor: #cdfaff;
+        --fillColor: rgb(255, 245, 207);
+        --hundleColor: #434343;
+
+        overflow: hidden;
+        -webkit-appearance: none;
+        background-color: #ffffff;
+        border: 1px solid black;
+
+        &::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            height: 10px;
+            margin-top: -1px;
+            color: var(--fillColor);
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 10px;
+            height: 10px;
+            cursor: ew-resize;
+            background: var(--hundleColor);
+            box-shadow: -200px 0 0 200px var(--fillColor);
+        }
+
+        /** FF*/
+        &::-moz-range-progress {
+            background-color: var(--fillColor);
+        }
+
+        &::-moz-range-track {
+            background-color: var(--hundleColor);
+        }
+
+        /* IE*/
+        &::-ms-fill-lower {
+            background-color: var(--fillColor);
+        }
+
+        &::-ms-fill-upper {
+            background-color: var(--hundleColor);
+        }
+    }
+}

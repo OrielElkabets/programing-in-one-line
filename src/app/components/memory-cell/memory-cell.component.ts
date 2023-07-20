@@ -10,8 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class MemoryCellComponent{
   @Input({ required: true }) cellValue = signal(0)
-  binValue = computed(() => {
-    if(this.cellValue() < 0 || this.cellValue() > 255) throw console.error("the memory value must be between 0 - 255");
-    return this.cellValue().toString(2).padStart(8,'0').split('')
-  })
+  binValue = computed(() => this.cellValue().toString(2).padStart(8,'0').split('').splice(-8,8))
+  overflow = computed(() => this.cellValue() < 0 || this.cellValue() > 255)
 }

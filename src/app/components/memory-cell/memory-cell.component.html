@@ -1,4 +1,4 @@
-<div class="byte">
+<div class="byte" [ngClass]="{'overflow': overflow()}" [title]="overflow() ? 'overflow' : ''">
     <div class="bit" *ngFor="let cell of binValue()" [ngClass]="{'on': cell == '1'}">
         {{cell}}
     </div>

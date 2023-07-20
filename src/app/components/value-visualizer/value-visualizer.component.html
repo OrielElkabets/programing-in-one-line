@@ -1,0 +1,4 @@
+<ng-container [ngSwitch]="visualizer.type">
+    <p *ngSwitchCase="VisualizerOptions.inner" class="numRepresantation">{{value | runTransform : visualizer.transformFn}}</p>
+    <p *ngSwitchDefault [style.background-color]="value | runTransform : visualizer.transformFn" class="numRepresantation"></p>
+</ng-container>

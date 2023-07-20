@@ -1,48 +1,11 @@
 <main class="_preventSelect">
   <section class="section section1">
-    <div class="sliderContainer">
-      <app-memory-cell [cellValue]="memoryCells[0]"></app-memory-cell>
-      <p class="numRepresantation">{{memoryCells[0]()}}</p>
-      <input type="range" min="0" max="255" [value]="memoryCells[0]()" (input)="updateMemo($event, memoryCells[0])">
-    </div>
-    
-    <div class="sliderContainer">
-      <app-memory-cell [cellValue]="memoryCells[1]"></app-memory-cell>
-      <div class="combineView">
-        <p class="numRepresantation">{{memoryCells[1]()}}</p>
-        <p class="numRepresantation">{{charCode()}}</p>
-      </div>
-      <input type="range" min="33" max="126" [value]="memoryCells[1]()" (input)="updateMemo($event, memoryCells[1])">
-    </div>
-
+    <app-memory-interaction-package [visualizers]="[Visualizers.number]" [minVal]="0" [maxVal]="255" ></app-memory-interaction-package>
+    <app-memory-interaction-package [visualizers]="[Visualizers.number, Visualizers.ascii]" [minVal]="33" [maxVal]="126" ></app-memory-interaction-package>
     <div class="collorCombinator">
-      <div class="sliderContainer">
-        <app-memory-cell [cellValue]="memoryCells[2]"></app-memory-cell>
-        <div class="combineView">
-          <p class="numRepresantation">{{memoryCells[2]()}}</p>
-          <p class="numRepresantation" [style.background-color]="redColor()"></p>
-        </div>
-        <input type="range" min="0" max="255" [value]="memoryCells[2]()" (input)="updateMemo($event, memoryCells[2])">
-      </div>
-  
-      <div class="sliderContainer">
-        <app-memory-cell [cellValue]="memoryCells[3]"></app-memory-cell>
-        <div class="combineView">
-          <p class="numRepresantation">{{memoryCells[3]()}}</p>
-          <p class="numRepresantation" [style.background-color]="greenColor()"></p>
-        </div>
-        <input type="range" min="0" max="255" [value]="memoryCells[3]()" (input)="updateMemo($event, memoryCells[3])">
-      </div>
-  
-      <div class="sliderContainer">
-        <app-memory-cell [cellValue]="memoryCells[4]"></app-memory-cell>
-        <div class="combineView">
-          <p class="numRepresantation">{{memoryCells[4]()}}</p>
-          <p class="numRepresantation" [style.background-color]="blueColor()"></p>
-        </div>
-        <input type="range" min="0" max="255" [value]="memoryCells[4]()" (input)="updateMemo($event, memoryCells[4])">
-      </div>
-
+      <app-memory-interaction-package [visualizers]="[Visualizers.r]" [minVal]="0" [maxVal]="255" [memory]="red"></app-memory-interaction-package>
+      <app-memory-interaction-package [visualizers]="[Visualizers.g]" [minVal]="0" [maxVal]="255" [memory]="green"></app-memory-interaction-package>
+      <app-memory-interaction-package [visualizers]="[Visualizers.b]" [minVal]="0" [maxVal]="255" [memory]="blue"></app-memory-interaction-package>
       <div class="resColor">
         <div [style.background-color]="resColor()"></div>
       </div>
