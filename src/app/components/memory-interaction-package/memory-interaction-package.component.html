@@ -1,8 +1,9 @@
-<div class="sliderContainer">
+<div class="wrapper">
     <app-memory-cell [cellValue]="memory"></app-memory-cell>
     <div class="combineViews">
         <app-value-visualizer *ngFor="let visualizer of visualizers" [value]="memory()" [visualizer]="visualizer"></app-value-visualizer>
     </div>
-    <input type="range" [min]="minVal" [max]="maxVal" (wheel)="scrollSlider($event)" [value]="memory()"
-        (input)="updateMemo($event, memory)">
+    <div class="rangeWrapper">
+        <app-memory-controller [minVal]="minVal" [maxVal]="maxVal" [memory]="memory"></app-memory-controller>
+    </div>
 </div>

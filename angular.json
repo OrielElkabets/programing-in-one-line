@@ -40,7 +40,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser", 
           "options": {
             "outputPath": "dist/programing-in-one-line",
             "index": "src/index.html",

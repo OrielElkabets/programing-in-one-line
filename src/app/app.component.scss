@@ -8,6 +8,7 @@ main {
 .section {
     height: 100%;
     scroll-snap-align: start;
+    padding: 5px;
 
     &.section1 {
         display: grid;

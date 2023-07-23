@@ -1,0 +1,4 @@
+<div class="wrapper">
+    <input type="range" [style.background-image]="memory() | calcGradient: minVal: maxVal" [min]="minVal" [max]="maxVal" (wheel)="scrollSlider($event)" [value]="memory()"
+    (input)="updateMemo($event)">
+</div>
